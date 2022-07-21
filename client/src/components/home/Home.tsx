@@ -62,7 +62,7 @@ const Wrapper = styled.div<{ item?: boolean }>`
       grid-template-columns: repeat(3, 1fr);
       column-gap: 5rem;
       row-gap: 5rem;
-      margin-bottom: 1.2rem;
+      margin-bottom: 5rem;
       flex-direction: row;
       align-items: center;
       justify-content: center;
@@ -77,7 +77,7 @@ const Span = styled.span`
 // SERVICES ITEMS
 const Item = styled.div`
   background-color: #f5f5f5;
-  width: 15rem;
+  width: 18rem;
   height: fit-content;
   padding: 0.8rem 0;
   border-radius: 0.8rem;
@@ -115,6 +115,7 @@ const IMG = styled.img`
 const ContentWrapper = styled.div`
   margin-top: 1.2rem;
   width: fit-content;
+  padding: 0.8rem;
 `
 const Text = styled.div`
   color: #000;
@@ -123,19 +124,19 @@ const Text = styled.div`
   text-align: center;
   text-align: -webkit-center;
 `
-const Button = styled.div`
-  margin-top: 1.2rem;
+const ButtonWrapper = styled.div`
   color: ${COLOR.brown};
-  font-weight: 500;
-  font-size: 1.2rem;
-  text-transform: uppercase;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 1.2rem;
   position: relative;
   padding: 0.8rem;
 
   &:hover {
     color: #fff;
     z-index: 1;
-    /* background: #aaa; */
+    background: rgba(170, 170, 170, 0.411);
     cursor: pointer;
 
     &:after {
@@ -167,6 +168,29 @@ const Button = styled.div`
   &:before {
     transition: all 0.5s;
   }
+`
+const IconWrapper = styled.div`
+  width: fit-content;
+  align-self: center;
+  align-self: -webkit-center;
+`
+const Button = styled.div<{ allServices?: boolean }>`
+  color: inherit;
+  font-weight: 500;
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  ${(props) =>
+    props.allServices &&
+    css`
+      background-color: ${COLOR.brown};
+      color: #ffffff;
+      font-size: 0.8rem;
+      font-weight: 800;
+      border-radius: 0.5rem;
+      padding: 1rem;
+    `}
 `
 
 const Home = () => {
@@ -200,9 +224,12 @@ const Home = () => {
                 Lorem Ipsum is simply dummy text for printing. Lorem Ipsum is
                 simply dummy text
               </Text>
-              <Button>
-                learn more <BsFillArrowRightCircleFill />
-              </Button>
+              <ButtonWrapper>
+                <Button>learn more</Button>
+                <IconWrapper>
+                  <BsFillArrowRightCircleFill />
+                </IconWrapper>
+              </ButtonWrapper>
             </ContentWrapper>
           </Item>
 
@@ -216,14 +243,17 @@ const Home = () => {
             </ImageWrapper>
 
             <ContentWrapper>
-              <Title item>InLand Freight</Title>
+              <Title item>Air Freight</Title>
               <Text>
                 Lorem Ipsum is simply dummy text for printing. Lorem Ipsum is
                 simply dummy text
               </Text>
-              <Button>
-                learn more <BsFillArrowRightCircleFill />
-              </Button>
+              <ButtonWrapper>
+                <Button>learn more</Button>
+                <IconWrapper>
+                  <BsFillArrowRightCircleFill />
+                </IconWrapper>
+              </ButtonWrapper>
             </ContentWrapper>
           </Item>
 
@@ -237,14 +267,17 @@ const Home = () => {
             </ImageWrapper>
 
             <ContentWrapper>
-              <Title item>InLand Freight</Title>
+              <Title item>Ocean Freight</Title>
               <Text>
                 Lorem Ipsum is simply dummy text for printing. Lorem Ipsum is
                 simply dummy text
               </Text>
-              <Button>
-                learn more <BsFillArrowRightCircleFill />
-              </Button>
+              <ButtonWrapper>
+                <Button>learn more</Button>
+                <IconWrapper>
+                  <BsFillArrowRightCircleFill />
+                </IconWrapper>
+              </ButtonWrapper>
             </ContentWrapper>
           </Item>
 
@@ -258,14 +291,17 @@ const Home = () => {
             </ImageWrapper>
 
             <ContentWrapper>
-              <Title item>InLand Freight</Title>
+              <Title item>Ware Housing</Title>
               <Text>
                 Lorem Ipsum is simply dummy text for printing. Lorem Ipsum is
                 simply dummy text
               </Text>
-              <Button>
-                learn more <BsFillArrowRightCircleFill />
-              </Button>
+              <ButtonWrapper>
+                <Button>learn more</Button>
+                <IconWrapper>
+                  <BsFillArrowRightCircleFill />
+                </IconWrapper>
+              </ButtonWrapper>
             </ContentWrapper>
           </Item>
 
@@ -279,14 +315,17 @@ const Home = () => {
             </ImageWrapper>
 
             <ContentWrapper>
-              <Title item>InLand Freight</Title>
+              <Title item>Logistics Services</Title>
               <Text>
                 Lorem Ipsum is simply dummy text for printing. Lorem Ipsum is
                 simply dummy text
               </Text>
-              <Button>
-                learn more <BsFillArrowRightCircleFill />
-              </Button>
+              <ButtonWrapper>
+                <Button>learn more</Button>
+                <IconWrapper>
+                  <BsFillArrowRightCircleFill />
+                </IconWrapper>
+              </ButtonWrapper>
             </ContentWrapper>
           </Item>
 
@@ -300,17 +339,22 @@ const Home = () => {
             </ImageWrapper>
 
             <ContentWrapper>
-              <Title item>InLand Freight</Title>
+              <Title item>Custom Broker</Title>
               <Text>
                 Lorem Ipsum is simply dummy text for printing. Lorem Ipsum is
                 simply dummy text
               </Text>
-              <Button>
-                learn more <BsFillArrowRightCircleFill />
-              </Button>
+              <ButtonWrapper>
+                <Button>learn more</Button>
+                <IconWrapper>
+                  <BsFillArrowRightCircleFill />
+                </IconWrapper>
+              </ButtonWrapper>
             </ContentWrapper>
           </Item>
         </Wrapper>
+
+        <Button allServices>view all services</Button>
       </Section>
     </Main>
   )

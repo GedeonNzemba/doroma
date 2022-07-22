@@ -2,8 +2,14 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { BsFillArrowRightCircleFill } from 'react-icons/bs'
 import banner from '../../images/b.jpg'
+import bannerb from '../../images/banner.jpg'
 import truck from '../../images/truck.svg'
+import capetown from '../../images/cape town.png'
+import pretoria from '../../images/pretoria.png'
+import brazzaville from '../../images/brazza.png'
+import pointnoire from '../../images/ponton.png'
 import { COLOR, fill } from '../../utility/colors'
+import Map from '../map/Map'
 
 const Main = styled.main`
   width: 100%;
@@ -49,7 +55,7 @@ const Bold = styled.div`
   display: inline-block;
 `
 
-const Wrapper = styled.div<{ item?: boolean }>`
+const Wrapper = styled.div<{ item?: boolean; map?: boolean }>`
   margin-top: 1rem;
   margin-bottom: 1rem;
   text-align: center;
@@ -67,6 +73,29 @@ const Wrapper = styled.div<{ item?: boolean }>`
       align-items: center;
       justify-content: center;
     `}
+
+  ${(props) =>
+    props.map &&
+    css`
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 5rem;
+      row-gap: 5rem;
+      position: relative;
+      margin-top: 8rem;
+      height: 50rem;
+      width: 100%;
+      background: #282c34;
+      background: url(${bannerb}), #282c34;
+      background-attachment: fixed;
+      background-blend-mode: color-burn;
+      color: #fff;
+      align-items: center;
+      align-items: -webkit-center;
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+      clip-path: polygon(0 0, 100% 2%, 100% 100%, 0% 100%);
+    `}
 `
 const Span = styled.span`
   margin-top: 1rem;
@@ -82,9 +111,15 @@ const Item = styled.div`
   padding: 0.8rem 0;
   border-radius: 0.8rem;
 `
-const ImageWrapper = styled.div`
+const ImageWrapper = styled.div<{ city?: boolean }>`
   text-align: center;
   text-align: -webkit-center;
+
+  ${(props) =>
+    props.city &&
+    css`
+      background-color: #c967714a;
+    `}
 `
 const OuterWrap = styled.div`
   position: relative;
@@ -108,14 +143,32 @@ const InnerWrap = styled.div`
   width: 10rem;
   height: 10rem;
 `
-const IMG = styled.img`
+const IMG = styled.img<{ city?: boolean }>`
   width: 10rem;
   height: 10rem;
+
+  ${(props) =>
+    props.city &&
+    css`
+      height: 100%;
+      width: 100%;
+      max-height: 12rem;
+      filter: drop-shadow(2px 4px 6px black);
+      background: #ffffff;
+      border-radius: 0 30px 0 30px;
+    `}
 `
-const ContentWrapper = styled.div`
+const ContentWrapper = styled.div<{ city?: boolean }>`
   margin-top: 1.2rem;
   width: fit-content;
   padding: 0.8rem;
+
+  ${(props) =>
+    props.city &&
+    css`
+      padding: 0;
+      margin-top: 0;
+    `}
 `
 const Text = styled.div`
   color: #000;
@@ -191,6 +244,29 @@ const Button = styled.div<{ allServices?: boolean }>`
       border-radius: 0.5rem;
       padding: 1rem;
     `}
+`
+
+// city
+const CityWrapper = styled.div`
+  display: grid;
+  grid-template-rows: repeat(16rem, 1fr);
+  flex-direction: column;
+  height: 100%;
+  column-gap: 3rem;
+`
+const City = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 0.8rem double #ffffff;
+  background: linear-gradient(
+    163deg,
+    rgba(80, 29, 34, 1) 0%,
+    rgba(255, 255, 255, 1) 50%
+  );
+
+  padding: 0.8rem;
+  margin: 2rem;
 `
 
 const Home = () => {
@@ -355,6 +431,68 @@ const Home = () => {
         </Wrapper>
 
         <Button allServices>view all services</Button>
+
+        <Wrapper map>
+          <CityWrapper>
+            <City>
+              <ImageWrapper>
+                <IMG city src={capetown} alt="services" />
+              </ImageWrapper>
+
+              <ContentWrapper city>
+                <Title item>Cape Town</Title>
+                <Text>
+                  Cape Town is part of the Doroma Logistics headquarter.
+                </Text>
+              </ContentWrapper>
+            </City>
+
+            <City>
+              <ImageWrapper>
+                <IMG city src={pretoria} alt="services" />
+              </ImageWrapper>
+
+              <ContentWrapper city>
+                <Title item>Pretoria</Title>
+                <Text>
+                  Pretoria is part of the Doroma Logistics headquarter.
+                </Text>
+              </ContentWrapper>
+            </City>
+          </CityWrapper>
+          <Map />
+          <CityWrapper>
+            <City>
+              <ImageWrapper>
+                <IMG city src={brazzaville} alt="services" />
+              </ImageWrapper>
+
+              <ContentWrapper city>
+                <Title item>Brazzaville</Title>
+                <Text>
+                  Doroma Logistics accepts parcel from here and destributes
+                  throughout the country. Doroma Logistics also accepts local
+                  parcel from here and destributes them in South Africa.
+                </Text>
+              </ContentWrapper>
+            </City>
+
+            <City>
+              <ImageWrapper>
+                <IMG city src={pointnoire} alt="services" />
+              </ImageWrapper>
+
+              <ContentWrapper city>
+                <Title item>Point Noire</Title>
+                <Text>
+                  Doroma Logistics accepts parcel from here and destributes
+                  throughout the country. Doroma Logistics also accepts local
+                  parcel from here and destributes them in South Africa.
+                </Text>
+              </ContentWrapper>
+            </City>
+          </CityWrapper>
+        </Wrapper>
       </Section>
     </Main>
   )

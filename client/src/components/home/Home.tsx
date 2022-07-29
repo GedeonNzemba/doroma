@@ -4,6 +4,7 @@ import { BsFillArrowRightCircleFill } from 'react-icons/bs'
 import banner from '../../images/b.jpg'
 import bannerb from '../../images/banner.jpg'
 import truck from '../../images/truck.svg'
+import airfreight from '../../images/airFreight.svg'
 import capetown from '../../images/cape town.png'
 import pretoria from '../../images/pretoria.png'
 import brazzaville from '../../images/brazza.png'
@@ -11,9 +12,11 @@ import pointnoire from '../../images/ponton.png'
 import { COLOR, fill } from '../../utility/colors'
 import Map from '../map/Map'
 
+import heavyMachine from '../../images/heavymachine.svg'
+
 const Main = styled.main`
   width: 100%;
-  height: 400vh;
+  height: 100%;
 `
 const Header = styled.header`
   width: 100%;
@@ -97,7 +100,7 @@ const Wrapper = styled.div<{ item?: boolean; map?: boolean }>`
       clip-path: polygon(0 0, 100% 2%, 100% 100%, 0% 100%);
     `}
 `
-const Span = styled.span`
+const Span = styled.span<{ center?: boolean }>`
   margin-top: 1rem;
   font-size: 1rem;
   color: #000000;
@@ -121,14 +124,23 @@ const ImageWrapper = styled.div<{ city?: boolean }>`
       background-color: #c967714a;
     `}
 `
-const OuterWrap = styled.div`
+const OuterWrap = styled.div<{ border?: boolean }>`
   position: relative;
   background-color: #e9f6ff;
   border-radius: 50%;
   width: 12rem;
   height: 12rem;
+
+  ${(props) =>
+    props.border &&
+    css`
+      border: 0.2rem solid #501d22;
+      background-color: unset;
+      width: 10rem;
+      height: 10rem;
+    `}
 `
-const InnerWrap = styled.div`
+const InnerWrap = styled.div<{ border?: boolean }>`
   position: absolute;
   background-color: #bedffe;
   border-radius: 50%;
@@ -142,8 +154,16 @@ const InnerWrap = styled.div`
   transform: translate(-50%, -50%);
   width: 10rem;
   height: 10rem;
+
+  ${(props) =>
+    props.border &&
+    css`
+      background-color: #c7c7c7;
+      width: 8rem;
+      height: 8rem;
+    `}
 `
-const IMG = styled.img<{ city?: boolean }>`
+const IMG = styled.img<{ city?: boolean; border?: boolean }>`
   width: 10rem;
   height: 10rem;
 
@@ -156,6 +176,13 @@ const IMG = styled.img<{ city?: boolean }>`
       filter: drop-shadow(2px 4px 6px black);
       background: #ffffff;
       border-radius: 0 30px 0 30px;
+    `}
+
+  ${(props) =>
+    props.border &&
+    css`
+      width: 8rem;
+      height: 8rem;
     `}
 `
 const ContentWrapper = styled.div<{ city?: boolean }>`
@@ -313,7 +340,7 @@ const Home = () => {
             <ImageWrapper>
               <OuterWrap>
                 <InnerWrap>
-                  <IMG src={truck} alt="services" />
+                  <IMG src={airfreight} alt="services" />
                 </InnerWrap>
               </OuterWrap>
             </ImageWrapper>
@@ -493,6 +520,106 @@ const Home = () => {
             </City>
           </CityWrapper>
         </Wrapper>
+
+        <Wrapper>
+          <Title>
+            Our Cargo <Bold>Expertise & Specialization</Bold>
+          </Title>
+          <div className="center-subText">
+            <Span>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Recusandae, ea impedit, possimus dolorem quisquam.
+            </Span>
+          </div>
+        </Wrapper>
+
+        <Wrapper item>
+          <Item>
+            <ImageWrapper>
+              <OuterWrap border>
+                <InnerWrap border>
+                  <IMG border src={heavyMachine} alt="services" />
+                </InnerWrap>
+              </OuterWrap>
+            </ImageWrapper>
+
+            <ContentWrapper>
+              <Title item>InLand Freight</Title>
+            </ContentWrapper>
+          </Item>
+
+          <Item>
+            <ImageWrapper>
+              <OuterWrap border>
+                <InnerWrap border>
+                  <IMG border src={heavyMachine} alt="services" />
+                </InnerWrap>
+              </OuterWrap>
+            </ImageWrapper>
+
+            <ContentWrapper>
+              <Title item>Air Freight</Title>
+            </ContentWrapper>
+          </Item>
+
+          <Item>
+            <ImageWrapper>
+              <OuterWrap border>
+                <InnerWrap border>
+                  <IMG border src={heavyMachine} alt="services" />
+                </InnerWrap>
+              </OuterWrap>
+            </ImageWrapper>
+
+            <ContentWrapper>
+              <Title item>Ocean Freight</Title>
+            </ContentWrapper>
+          </Item>
+
+          <Item>
+            <ImageWrapper>
+              <OuterWrap border>
+                <InnerWrap border>
+                  <IMG border src={heavyMachine} alt="services" />
+                </InnerWrap>
+              </OuterWrap>
+            </ImageWrapper>
+
+            <ContentWrapper>
+              <Title item>Ware Housing</Title>
+            </ContentWrapper>
+          </Item>
+
+          <Item>
+            <ImageWrapper>
+              <OuterWrap border>
+                <InnerWrap border>
+                  <IMG border src={heavyMachine} alt="services" />
+                </InnerWrap>
+              </OuterWrap>
+            </ImageWrapper>
+
+            <ContentWrapper>
+              <Title item>Logistics Services</Title>
+            </ContentWrapper>
+          </Item>
+
+          <Item>
+            <ImageWrapper>
+              <OuterWrap border>
+                <InnerWrap border>
+                  <IMG border src={heavyMachine} alt="services" />
+                </InnerWrap>
+              </OuterWrap>
+            </ImageWrapper>
+
+            <ContentWrapper>
+              <Title item>Custom Broker</Title>
+            </ContentWrapper>
+          </Item>
+        </Wrapper>
+
+        <Button allServices>Contact Us</Button>
       </Section>
     </Main>
   )

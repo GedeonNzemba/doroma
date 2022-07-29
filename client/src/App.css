@@ -24,3 +24,8 @@ ul {
     padding-inline-start: 0;
     padding-inline-end: 0;
 }
+
+.center-subText {
+    max-width: 60%;
+    text-align: center;
+}

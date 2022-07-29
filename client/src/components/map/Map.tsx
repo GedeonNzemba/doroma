@@ -24,7 +24,7 @@ export default function Map() {
   return (
     <Container>
       <AfricaMap
-        selection={false}
+        selection={true}
         selected={['ZA', 'CG', 'CD']}
         size={3}
         borderColor="#000"

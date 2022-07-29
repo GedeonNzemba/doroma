@@ -9,7 +9,7 @@ const HeaderContainer = styled.header`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 1.2rem;
+  padding: 1rem 1.5rem;
   box-shadow: -2px -4px 9px 0px rgb(0 0 0 / 75%);
   background-color: #f2f2f2;
   height: 2.4rem;
@@ -127,19 +127,13 @@ const Header = () => {
             <Anchor space>tracking</Anchor>
           </Item>
           <Item>
+            <Anchor space>booking</Anchor>
+          </Item>
+          <Item>
             <Anchor space>contact us</Anchor>
           </Item>
           <Item>
             <Anchor space>about us</Anchor>
-          </Item>
-          <Item>
-            <Anchor space>English</Anchor>
-          </Item>
-          <Item>
-            <Anchor space>quotes</Anchor>
-          </Item>
-          <Item>
-            <Anchor space>booking</Anchor>
           </Item>
         </NavItem>
       </ItemContainer>

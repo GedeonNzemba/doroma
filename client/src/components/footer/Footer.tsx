@@ -41,6 +41,7 @@ const FormWrapper = styled.div`
   width: 100%;
 `
 const HeaderInput = styled.h6`
+  font-family: 'Syncopate', sans-serif;
   font-size: 0.8rem;
   color: #ffffff;
   font-weight: 400;
@@ -67,12 +68,14 @@ const Li = styled.li`
   padding: 1rem;
 `
 const Title = styled.h3`
+  font-family: 'Syncopate', sans-serif;
   color: ${COLOR.brown};
   font-size: 0.8rem;
-  font-weight: 800;
+  font-weight: 700;
   text-transform: uppercase;
 `
 const Item = styled.div<{ space?: boolean; link?: boolean }>`
+  font-family: 'Syncopate', sans-serif;
   color: #ffffff;
   font-size: 0.7rem;
   font-weight: 400;
@@ -124,13 +127,14 @@ const Input = styled.input`
   }
 `
 const Submit = styled.input`
+  font-family: 'Syncopate', sans-serif;
   background-color: ${COLOR.brown};
   border: none;
   padding: 0.5rem 1.6rem;
   margin-left: 1rem;
   border-radius: 1rem;
   font-size: 0.8rem;
-  font-weight: 800;
+  font-weight: 700;
   cursor: pointer;
   color: #ffffff;
 `

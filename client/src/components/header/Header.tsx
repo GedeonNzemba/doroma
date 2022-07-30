@@ -38,6 +38,7 @@ const NavItem = styled.ul`
   list-style-type: none;
 `
 const Item = styled.li`
+  font-family: 'Syncopate', sans-serif;
   font-size: 1.1rem;
   text-transform: capitalize;
 
@@ -47,11 +48,12 @@ const Item = styled.li`
 `
 
 const Anchor = styled.a<{ space?: boolean }>`
+  font-family: 'Syncopate', sans-serif;
   font-size: inherit;
   display: block;
   text-decoration: none;
   color: #aaa;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   position: relative;
   transition: all 2s;
@@ -113,7 +115,7 @@ const Header = () => {
   return (
     <HeaderContainer>
       <LogoContainer>
-        <Link to="/">
+        <Link to="/shop">
           <IMG src={logo} alt="doroma logistics" />
         </Link>
       </LogoContainer>

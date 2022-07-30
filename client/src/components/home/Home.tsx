@@ -37,9 +37,10 @@ const Section = styled.section`
 
 const Title = styled.h1<{ item?: boolean }>`
   text-transform: capitalize;
+  font-family: 'Syncopate', sans-serif;
   font-size: 2.5rem;
   color: #000000;
-  font-weight: 500;
+  font-weight: 400;
   margin-block-start: 1.2rem;
   margin-block-end: 0;
   margin-bottom: 0.8rem;
@@ -47,14 +48,15 @@ const Title = styled.h1<{ item?: boolean }>`
   ${(props) =>
     props.item &&
     css`
-      font-weight: 800;
+      font-weight: 700;
       font-size: 1.2rem;
       margin-block-start: 0;
     `}
 `
 
 const Bold = styled.div`
-  font-weight: 800;
+  font-family: 'Syncopate', sans-serif;
+  font-weight: 700;
   display: inline-block;
 `
 
@@ -101,6 +103,7 @@ const Wrapper = styled.div<{ item?: boolean; map?: boolean }>`
     `}
 `
 const Span = styled.span<{ center?: boolean }>`
+  font-family: 'Syncopate', sans-serif;
   margin-top: 1rem;
   font-size: 1rem;
   color: #000000;
@@ -198,6 +201,7 @@ const ContentWrapper = styled.div<{ city?: boolean }>`
     `}
 `
 const Text = styled.div`
+  font-family: 'Syncopate', sans-serif;
   color: #000;
   font-size: 1rem;
   font-weight: 400;
@@ -255,8 +259,9 @@ const IconWrapper = styled.div`
   align-self: -webkit-center;
 `
 const Button = styled.div<{ allServices?: boolean }>`
+  font-family: 'Syncopate', sans-serif;
   color: inherit;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 1rem;
   text-transform: uppercase;
   cursor: pointer;
@@ -267,7 +272,7 @@ const Button = styled.div<{ allServices?: boolean }>`
       background-color: ${COLOR.brown};
       color: #ffffff;
       font-size: 0.8rem;
-      font-weight: 800;
+      font-weight: 700;
       border-radius: 0.5rem;
       padding: 1rem;
     `}

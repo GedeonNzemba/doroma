@@ -1,8 +1,7 @@
-import Footer from './components/footer/Footer'
 import Header from './components/header/Header'
-import { Routes, Route } from 'react-router'
 import Home from './components/home/Home'
 import styled from 'styled-components'
+import Footer from './components/footer/Footer'
 
 const Container = styled.main`
   flex: auto;
@@ -14,10 +13,7 @@ export const App = () => {
     <>
       <Header />
       <Container>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          {/* <Route path="about" element={<About />} /> */}
-        </Routes>
+        <Home />
       </Container>
       <Footer />
     </>
